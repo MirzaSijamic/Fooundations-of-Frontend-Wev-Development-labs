@@ -1,11 +1,31 @@
 body {
-    background-color: blue;
+    background-color: rgb(66, 116, 208);
     font: "Latio";
 }
 
-.lato-regular {
+  body{
+    color: white;
+    text-align: center;
     font-family: "Lato", sans-serif;
     font-weight: 400;
     font-style: normal;
+    padding: 20px;
   }
+
+
+  .title{
+    font-weight: bold;
+  }
+
+  .submit{
+    color: white;
+    background-color: #E47272;
+    border-radius: 20px;
+  }
+
+  .link{
+    color: black;
+    font-weight: bold;
+  }
+
 
