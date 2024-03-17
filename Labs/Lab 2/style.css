@@ -1,0 +1,28 @@
+header{
+    background-color: lightcoral;
+    display: flex;
+    padding: 30px;
+}
+
+footer{
+    background-color: lightcoral;
+}
+
+.slika1{
+    width: 141px;
+    height: 141px;
+    position: absolute;
+    right: 8px;
+    top: 8px;
+}
+
+.slike{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: rgba(132, 243, 206, 0.47);
+    padding: 30px;
+}
+
+.fig{
+    text-align: center;
+}
