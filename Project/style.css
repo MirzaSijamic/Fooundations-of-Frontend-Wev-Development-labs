@@ -18,3 +18,16 @@
 .brown{
     background-color: #bc6a3c;
 }
+
+.fade-in {
+    opacity: 0; /* Initially hide the div */
+    visibility: hidden; /* Hide the div */
+    animation: fade-in-animation 10s forwards; /* Apply the fade-in animation */
+}
+
+@keyframes fade-in-animation {
+    to {
+        opacity: 1; /* End with opacity 1 */
+        visibility: visible;
+    }
+}
