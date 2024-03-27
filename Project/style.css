@@ -19,6 +19,27 @@
     background-color: #bc6a3c;
 }
 
+.kartice{
+    width: 100%;
+    padding-left: 30px;
+    padding-bottom: 30px;
+    padding-top: 30px;
+}
+
+.strelicec{
+    position: relative;
+}
+
+.strelicecp,
+.strelicecn{
+    position: absolute;
+    top: 50%;
+}
+
+.strelicecp{
+    left: 50;
+}
+
 .fade-in {
     opacity: 0; /* Initially hide the div */
     visibility: hidden; /* Hide the div */

@@ -35,20 +35,46 @@
 
 <main class="brown">
 
-    <section class="iamge-container">
-        <img src="pictures/library2.jpg" alt="blurred slika" width="100%">
+    <section id="demo" class="carousel slide" data-ride="carousel">
 
-        <div class="text-over-image">
-            lorem text neki random nmp
+        <ul class="carousel-indicators">
+            <li data-target="#demo" data-slide-to="0" class="active"></li>
+            <li data-target="#demo" data-slide-to="1"></li>
+            <li data-target="#demo" data-slide-to="2"></li>
+        </ul>
+
+        <div class="carousel-inner strelicec">
+
+            <div class="carousel-item active">
+                <img src="pictures/library2.jpg" alt="blurred slika" width="100%">
+            </div>
+            <div class="carousle-caption text-over-image">lorem text neki random nmp</div>
+
+            <div class="carousel-item">
+                <img src="pictures/library.jpg" alt="blurred slika" width="100%">
+            </div>
+            <div class="carousle-caption text-over-image">lorem text neki random nmp</div>
+
+            <div class="carousel-item">
+                <img src="pictures/blurry.jpg" alt="blurred slika" width="100%">
+            </div>
+            <div class="carousle-caption text-over-image">lorem text neki random nmp</div>
+
+            <a calss="carousel-control-prev strelicecp text-over-image" href="#demo" data-slide="prev">
+                <span class="carousel-control-prev-icon text-over-image"></span>
+            </a>
+            <a calss="carousel-control-next strelicecn text-over-image" href="#demo" data-slide="next">
+                <span class="carousel-control-next-icon text-over-image"></span>
+            </a>
+
         </div>
-        <br>
+
     </section>
 
     &nbsp;
 
-    <section>
+    <section class="kartice">
         <div class="container">
-
 
             <div class="row justify-content-center fade-in">
                 <div class="col-md-4">
@@ -91,7 +117,7 @@
         </div>
     </section>
 
-    <section class="card-deck">
+    <section class="card-deck kartice">
         
 
         <div class="card bg-secondary">
@@ -150,6 +176,10 @@
         </div>
 
     </section>
+
+    <footer>
+        
+    </footer>
 </main>
 
 </body>
