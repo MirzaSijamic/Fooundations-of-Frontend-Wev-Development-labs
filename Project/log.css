@@ -1,0 +1,45 @@
+.form-horizontal label {
+  font-weight: bold;
+}
+.form-horizontal .form-group {
+  margin-bottom: 20px;
+}
+.form-horizontal .form-group .control-label {
+  margin-bottom: 10px;
+}
+.form-horizontal .form-group .input-group .input-group-addon {
+  background-color: transparent;
+  border: none;
+  color: #6c757d;
+}
+.form-horizontal .form-group .input-group input[type=text] .form-control,
+.form-horizontal .form-group .input-group input[type=password] .form-control,
+.form-horizontal .form-group .input-group input[type=email] .form-control {
+  border-color: #6c757d;
+}
+.form-horizontal .form-group .input-group input[type=text] .form-control:focus,
+.form-horizontal .form-group .input-group input[type=password] .form-control:focus,
+.form-horizontal .form-group .input-group input[type=email] .form-control:focus {
+  border-color: #007bff;
+  box-shadow: none;
+}
+.form-horizontal .col-sm-offset-2 {
+  margin-left: 16.66666667%;
+}
+
+.btn.btn-default {
+  color: #6c757d;
+  border-color: #6c757d;
+}
+.btn.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+.btn.btn-primary:hover {
+  background-color: #0062cc;
+  border-color: #0062cc;
+}
+
+body{
+  background-color: brown;
+}
