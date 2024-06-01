@@ -1,0 +1,24 @@
+{
+    "images": [
+        {
+            "src": "pictures/maturalac.jpg",
+            "caption": "Caption for Image 1"
+        },
+        {
+            "src": "pictures/naruto.jpg",
+            "caption": "Caption for Image 2"
+        },
+        {
+            "src": "pictures/cat.jpg",
+            "caption": "Caption for Image 3"
+        },
+        {
+            "src": "pictures/jjk.jpg",
+            "caption": "Caption for Image 3"
+        },
+        {
+            "src": "pictures/miraculus.jpg",
+            "caption": "Caption for Image 3"
+        }
+    ]
+}
