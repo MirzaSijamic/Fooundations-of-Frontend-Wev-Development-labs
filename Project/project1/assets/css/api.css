@@ -1,0 +1,41 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.news-article {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+.news-article:last-child {
+    border: none;
+}
+
+.news-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.news-description {
+    margin: 5px 0;
+}
+
+.news-author {
+    font-size: 14px;
+    color: #555;
+}
+
+.news-url {
+    color: #1a0dab;
+}
