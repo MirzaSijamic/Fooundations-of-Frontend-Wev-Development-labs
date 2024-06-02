@@ -19,6 +19,10 @@
         {
             "src": "pictures/miraculus.jpg",
             "caption": "Caption for Image 3"
+        },
+        {
+            "src": "pictures/Konrad-ili-dijete-iz-limenke.jpg",
+            "caption": "Caption for Image 3"
         }
     ]
 }

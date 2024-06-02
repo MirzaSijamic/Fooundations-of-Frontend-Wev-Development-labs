@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Management</title>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>User Management</h1>
+        <table id="userTable" class="display" style="width:100%">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Email</th>
+                    <th>Password</th>
+                    <th>Admin</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Content loaded via jQuery -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Edit Modal -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="editClose">&times;</span>
+            <h2>Edit User</h2>
+            <form id="editForm">
+                <input type="hidden" id="editId">
+                <label for="editEmail">Email:</label>
+                <input type="email" id="editEmail" required><br>
+                <label for="editPassword">Password:</label>
+                <input type="text" id="editPassword" required><br>
+                <label for="editAdmin">Admin:</label>
+                <input type="checkbox" id="editAdmin"><br>
+                <button type="submit">Save Changes</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="successClose">&times;</span>
+            <h2>Success</h2>
+            <p id="successMessage"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

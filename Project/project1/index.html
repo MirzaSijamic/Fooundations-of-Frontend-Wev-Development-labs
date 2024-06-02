@@ -45,19 +45,18 @@
     <!--SPAPP JS-->
     <script src="assets/js/jquery.spapp.js"></script>
     <script src="assets/js/custom.js"></script>
-    <!--
     <script src="services/student-service.js"></script>
     <script src="utils/constants.js"></script>
     <script src="utils/utils.js"></script>
     <script src="utils/rest-client.js"></script>
-    <script src="services/user-service.js"></script>-->
+    <script src="services/user-service.js"></script>
 </head>
   
 <body>
     
   <header>
       <nav class="container navbar navbar-expand-sm bg-dark navbar-dark fixed-top" role="navigation">
-          <ul class="navbar-nav">
+          <ul class="navbar-nav" id="tabs">
 
             <li class="nav-item active">
               <a class="nav-link" href="#slike">
@@ -160,15 +159,99 @@
   </main>
 
   <script>
+    let user = JSON.parse(localStorage.getItem("user"));
+   
+    if (user){
+        if(!user.admin){
+            let nav = '<li class="nav-item active">'+
+                        '<a class="nav-link" href="#slike">'+
+                            '<img src="pictures/png-clipart-white-and-orange-book-logo-symbol-yellow-orange-logo-ibooks-orange-logo-thumbnail-removebg-preview.png" alt="Logo" width="13%">'+
+                        '</a>'+
+                        '</li>'+
+
+                        '<li class="nav-item">'+
+                            '<a class="nav-link" href="login.html">Login</a>'+
+                        '</li>'+
+
+                        '<li class="nav-item">'+
+                        '<a class="nav-link" href="#books" >books</a>'+
+                        '</li>'+
+
+                        '<li class="nav-item">'+
+                        '<a class="nav-link" href="#test">test1</a>'+
+                        '</li>'+
+
+                        '<li>'+
+                            '<a class="nav-link" href="#test2">Test2</a>'+
+                        '</li>'+
+                        '<li>'+
+                            '<button class="btn btn-primary" onclick="UserService.logout()">Logout</button>'
+                        '</li>';
+                $("#tabs").html(nav);
+
+            let main =
+                    '<section id="slike" data-load="slike.html">'+'</section>'+                    
+                    '<section id="test" data-load="test.html">'+'</section>'+                        
+                    '<section id="test2" data-load="test2.html">'+'</section>'+
+                    '<section id="books" data-load="books.html">'+'<div>DO THE LAH LAH LAH LAH</div>'+
+                    '</section>';
+                $("#spapp").html(main);
+
+        }else {
+            let nav = '<li class="nav-item active">'+
+                        '<a class="nav-link" href="#slike">'+
+                            '<img src="pictures/png-clipart-white-and-orange-book-logo-symbol-yellow-orange-logo-ibooks-orange-logo-thumbnail-removebg-preview.png" alt="Logo" width="13%">'+
+                        '</a>'+
+                        '</li>'+
+
+                        '<li class="nav-item">'+
+                            '<a class="nav-link" href="login.html">Login</a>'+
+                        '</li>'+
+
+                        '<li class="nav-item">'+
+                        '<a class="nav-link" href="#books" >books</a>'+
+                        '</li>'+
+
+                        '<li class="nav-item">'+
+                        '<a class="nav-link" href="#test">test1</a>'+
+                        '</li>'+
+
+                        '<li>'+
+                            '<a class="nav-link" href="#test2">Test2</a>'+
+                        '</li>'+
+                        '<li>'+
+                            '<a class="nav-link" href="#admin">ADMIN</a>'+
+                        '</li>'+
+                        '<li>'+
+                            '<button class="btn btn-primary" onclick="UserService.logout()">Logout</button>'
+                        '</li>';
+                $("#tabs").html(nav);
+
+            let main =
+                    '<section id="slike" data-load="slike.html">'+'</section>'+                    
+                    '<section id="test" data-load="test.html">'+'</section>'+                        
+                    '<section id="test2" data-load="test2.html">'+'</section>'+
+                    '<section id="books" data-load="books.html">'+'<div>DO THE LAH LAH LAH LAH</div>'+
+                    '</section>'+
+                    '<section id="admin" data-load=admin.html>'+'</section>' ;
+                $("#spapp").html(main);
+
+        } 
+    } else {
+        window.location.replace("login.html");
+    }
+    </script>
+
+    <script>
     var app = $.spapp({
         defaultView: "#slike",
         templateDir: "./tpl/"
 
     });
-
-
     app.run();
-</script>
+    </script>
+
+    
 
 </body>
 </html>
