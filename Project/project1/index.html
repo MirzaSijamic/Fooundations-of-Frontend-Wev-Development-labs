@@ -21,6 +21,9 @@
     <script src="assets/js/api.js"></script>
     <link rel="stylesheet" href="assets/css/api.css">
 
+    <script src="assets/js/faq.js"></script>
+    <link rel="stylesheet" href="assets/css/faq.css">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -83,8 +86,12 @@
               <a class="nav-link" href="#test">test1</a>
             </li>
 
-            <li>
+            <li class="nav-item">
                 <a class="nav-link" href="#test2">Test2</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="#questions">Q</a>
             </li>
 
           </ul>
@@ -148,6 +155,10 @@
             <section id="books" data-load="books.html">
                 <div>DO THE LAH LAH LAH LAH</div>
             </section>
+
+            <section id="questions" data-load="questions.html">
+                
+            </section>
         </main>
 
 
@@ -157,9 +168,11 @@
           <div class="container">
               <p>&copy; 2024 Your Book Store. All rights reserved.</p>
               <ul class="list-inline">
-                  <li class="list-inline-item"><a href="#">Home</a></li>
-                  <li class="list-inline-item"><a href="#">About Us</a></li>
+                  <li class="list-inline-item"><a href="#slike">Home</a></li>
+                  <li class="list-inline-item"><a href="#questions">FAQ</a></li>
                   <li class="list-inline-item"><a href="#">Contact</a></li>
+
+                  <a class="nav-link" href="#test">test1</a>
               </ul>
           </div>
       </footer>
@@ -193,6 +206,9 @@
                         '</li>'+
                         '<li>'+
                             '<button class="btn btn-primary" onclick="UserService.logout()">Logout</button>'
+                        '</li>'+
+                        '<li class="nav-item">'+
+                            '<a class="nav-link" href="#questions">Q</a>'+
                         '</li>';
                 $("#tabs").html(nav);
 
@@ -201,7 +217,8 @@
                     '<section id="test" data-load="test.html">'+'</section>'+                        
                     '<section id="test2" data-load="test2.html">'+'</section>'+
                     '<section id="books" data-load="books.html">'+'<div>DO THE LAH LAH LAH LAH</div>'+
-                    '</section>';
+                    '</section>'+
+                    '<section id="questions" data-load="questions.html">'+'</section>';
                 $("#spapp").html(main);
 
         }else {

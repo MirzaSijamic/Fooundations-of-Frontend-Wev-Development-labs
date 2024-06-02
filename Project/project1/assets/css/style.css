@@ -1,43 +1,47 @@
-.image-container{
+.image-container {
     width: 100%;
     height: 200px;
     position: relative;
-    background-attachment:fix ;
+    background-attachment: fixed;
 }
 
-.text-over-image{
+.text-over-image {
     position: absolute;
     top: 50%;
-    bottom: 50%;
+    transform: translateY(-50%);
     color: white;
     text-align: center;
     width: 100%;
     font-size: 24px;
 }
 
-.brown{
+.brown {
     background-color: #bc6a3c;
 }
 
-.kartice{
+.darken-brown {
+    background-color: #5b341e;
+}
+
+.kartice {
     width: 100%;
     padding-left: 30px;
     padding-bottom: 30px;
     padding-top: 30px;
 }
 
-.strelicec{
+.strelicec {
     position: relative;
 }
 
 .strelicecp,
-.strelicecn{
+.strelicecn {
     position: absolute;
     top: 50%;
 }
 
-.strelicecp{
-    left: 50;
+.strelicecp {
+    left: 50px;
 }
 
 .fade-in {

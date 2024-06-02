@@ -2,8 +2,9 @@ body {
     font-family: Arial, sans-serif;
 }
 
-.container {
+.containerrr {
     width: 80%;
+    background-color: #555;
     margin: 0 auto;
 }
 
@@ -13,7 +14,7 @@ h1 {
 }
 
 .news-article {
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #dbd812;
     padding: 10px 0;
 }
 
