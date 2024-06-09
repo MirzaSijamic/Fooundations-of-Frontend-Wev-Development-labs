@@ -1,62 +1,53 @@
 import React, { useState } from 'react';
 import { Container, TextField, Button, Typography } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 
 const ContactPage = () => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
   const [errors, setErrors] = useState({});
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const newErrors = {};
-    if (!name) newErrors.name = 'Name is required';
-    if (!email) newErrors.email = 'Email is required';
-    if (!message) newErrors.message = 'Message is required';
+    if (!username) newErrors.username = 'Username is required';
+    if (!password) newErrors.password = 'Password is required';
     setErrors(newErrors);
     if (Object.keys(newErrors).length === 0) {
-      // Submit the form
-      console.log({ name, email, message });
+      // Simulate login and redirect
+      console.log({ username, password });
+      navigate('/');
     }
   };
 
   return (
     <Container>
       <Typography variant="h4" gutterBottom>
-        Contact Us
+        Login
       </Typography>
       <form onSubmit={handleSubmit}>
         <TextField
-          label="Name"
+          label="Username"
           fullWidth
           margin="normal"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          error={!!errors.name}
-          helperText={errors.name}
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+          error={!!errors.username}
+          helperText={errors.username}
         />
         <TextField
-          label="Email"
+          label="Password"
           fullWidth
           margin="normal"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          error={!!errors.email}
-          helperText={errors.email}
-        />
-        <TextField
-          label="Message"
-          fullWidth
-          margin="normal"
-          multiline
-          rows={4}
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
-          error={!!errors.message}
-          helperText={errors.message}
+          type="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          error={!!errors.password}
+          helperText={errors.password}
         />
         <Button type="submit" variant="contained" color="primary">
-          Send Message
+          Login
         </Button>
       </form>
     </Container>

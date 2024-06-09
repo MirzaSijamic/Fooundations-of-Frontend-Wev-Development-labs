@@ -2,9 +2,15 @@ import React from 'react';
 import { AppBar, Toolbar, Typography, Grid, Card, CardContent, CardMedia, Container, Button } from '@mui/material';
 
 const books = [
-  { title: 'Book 1', description: 'This is book 1', image: 'https://via.placeholder.com/150' },
-  { title: 'Book 2', description: 'This is book 2', image: 'https://via.placeholder.com/150' },
-  { title: 'Book 3', description: 'This is book 3', image: 'https://via.placeholder.com/150' },
+  { title: 'Book 1', description: 'Book 1: Miraculus', image: 'https://m.media-amazon.com/images/M/MV5BMGRjNDJjMTUtZmJjNy00ZDNhLWFhNDEtYjc0MDQwMTRlMmY4XkEyXkFqcGdeQXVyMTYwODE3NTA3._V1_FMjpg_UX1000_.jpg' },
+  { title: 'Book 2', description: 'Book 2: JJK', image: 'https://m.media-amazon.com/images/I/81TmHlRleJL._AC_UF1000,1000_QL80_.jpg' },
+  { title: 'Book 3', description: 'Book 3: Yu-Gi-Oh', image: 'https://m.media-amazon.com/images/I/81K7taBQxiL._AC_UF1000,1000_QL80_.jpg' },
+  { title: 'Book 4', description: 'Book 1: Miraculus 2', image: 'https://m.media-amazon.com/images/M/MV5BMGRjNDJjMTUtZmJjNy00ZDNhLWFhNDEtYjc0MDQwMTRlMmY4XkEyXkFqcGdeQXVyMTYwODE3NTA3._V1_FMjpg_UX1000_.jpg' },
+  { title: 'Book 5', description: 'Book 2: JJK 2', image: 'https://m.media-amazon.com/images/I/81TmHlRleJL._AC_UF1000,1000_QL80_.jpg' },
+  { title: 'Book 6', description: 'Book 3: Yu-Gi-Oh 2', image: 'https://m.media-amazon.com/images/I/81K7taBQxiL._AC_UF1000,1000_QL80_.jpg' },
+  { title: 'Book 7', description: 'Book 1: Miraculus 3', image: 'https://m.media-amazon.com/images/M/MV5BMGRjNDJjMTUtZmJjNy00ZDNhLWFhNDEtYjc0MDQwMTRlMmY4XkEyXkFqcGdeQXVyMTYwODE3NTA3._V1_FMjpg_UX1000_.jpg' },
+  { title: 'Book 8', description: 'Book 2: JJK 2', image: 'https://m.media-amazon.com/images/I/81TmHlRleJL._AC_UF1000,1000_QL80_.jpg' },
+  { title: 'Book 9', description: 'Book 3: Yu-Gi-Oh 2', image: 'https://m.media-amazon.com/images/I/81K7taBQxiL._AC_UF1000,1000_QL80_.jpg' },
 ];
 
 const HomePage = () => {
