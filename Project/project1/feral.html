@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Midterm Makeup & Final Exam</title>
+      <!-- Bootstrap CSS -->
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+      <!--Datatable CSS-->
+      <link href="https://cdn.datatables.net/2.0.3/css/dataTables.dataTables.min.css" rel="stylesheet">
+      <!--Select2 CSS -->
+      <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+      <!-- jQuery -->
+      <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+      <!-- Bootstrap JS -->
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+      <!-- jQuery BlockUI -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.blockUI/2.70/jquery.blockUI.min.js"></script>
+      <!--Datatable JS-->
+      <script src=https://cdn.datatables.net/2.0.3/js/dataTables.min.js></script>
+      <!--Select2 JS-->
+      <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+     
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Midterm Makeup & Final Exam</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar"
+        aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container theme-showcase" role="main">
+    <div class="jumbotron">
+      <h1>
+        Welcome to Midterm Makeup & Final Exam at course Foundations of Frontend Web Development
+      </h1>
+      <p>
+        This is a skeleton project. You have to populate missing snippet codes to make this project functional.
+      </p>
+
+      <h3>Following parts should be completed for FINAL</h3>
+      <ul>
+        <li>
+          1. Implement TODO #1 in index.html
+        </li>
+        <li>
+          2. Implement TODO #2 in index.html
+        </li>
+        <li>
+          3. Implement TODO #3 in index.html
+        </li>
+        <li>
+          4. Zip project and upload to assignment on the LMS
+        </li>
+      </ul>
+
+      <h3>Following parts should be completed for Midterm Makeup</h3>
+      <ul>
+        <li>
+          1. Implement TODO #4 in index.html
+        </li>
+        <li>
+          2. Implement TODO #5 in index.html
+        </li>
+        <li>
+          3. Implement TODO #6 in index.html
+        </li>
+        <li>
+          4. Zip project and upload to assignment on the LMS
+        </li>
+      </ul>
+    </div>
+
+    <select name="countries" id="countries" >
+
+    </select>
+
+
+    <table id = "distribution">
+    </table>
+
+
+    <table id="locations"></table>
+    <div id="selectedCountry"></div>
+  </div>
+<script>
+
+  let Countries = [];
+  let count = 0;
+
+  /* FINAL EXAM */
+  /*TODO #1
+   * Load content from IP2LOCATION.json file using AJAX
+   * 10 points
+   */
+
+   $.ajax({
+        url: 'IP2LOCATION.json',
+        method: 'GET',
+        dataType: 'json',
+        success: function (data) {
+            data.forEach(element => {
+              //console.log(element.Country);
+              
+              if(Countries.includes(element["Country"])){
+                count++;
+              }
+              else{
+                if (element["Country"] && element["Country"] !== '-') {
+                    Countries.push(element["Country"]);
+                }
+              }
+            });
+
+            let dropdown = '';
+              for (let i = 0; i < Countries.length; i++) {
+                  dropdown += "<option value='" + Countries[i] + "'>" + Countries[i] + '</option>';
+              }
+              //console.log(dropdown);
+
+            $('#countries').html(dropdown);
+            $('#countries').select2();
+            
+            $('#countries').on('change', function(){
+              let izarbana = $(this).val();
+              localStorage.setItem('Drzava',  izarbana);
+            })
+
+            console.log(Countries[1][0]);
+
+            let A=0, B=0, C=0, D=0;
+
+            for (let i = 0; i < Countries.length; i++) {
+              if(Countries[i][0] == 'A') A++
+              else if(Countries[i][0] == 'B') B++
+              else if(Countries[i][0] == 'C') C++
+              else if(Countries[i][0] == 'D') D++
+            };
+
+            console.log(A,B,C,D);
+
+            $('#distribution').DataTable({
+              "data": [
+                    ["A", A],
+                    ["B", B],
+                    ["C", C],
+                    ["D", D]
+                ],
+                "columns": [
+                    { "title": "Letter" },
+                    { "title": "Count" }
+                ]
+            })
+
+        },
+        error: function (error) {
+            console.error('Error loading images:', error);
+        }
+    });
+    
+
+  /*TODO #2
+   * Create select dropdown (10 points) and load unique countries from file within it (10 points)
+   * when item is clicked country name should be added to local storage as country_name(10 points)
+   * -> unique means that one country appears only once
+   * You can use select2 library if you want 
+   * 30 points
+   */
+
+  /*TODO #3
+   * Use jQuery Datatable library to create HTML table with id = distribution (15 points)
+   * This table will list distribution of how many unique countries starts with letters A, B, C and D (15 points)
+   * It means that first column will display a letter and second column number of countries whose name starts with the given letter
+   * -> unique means that each country is counted only one time
+   * Example (numbers are given as a sample, not real results):
+   * A  1
+   * B  2
+   * C  3
+   * D  4
+   * total 30 points
+   */
+
+
+  /* MIDTERM MAKEUP EXAM */
+
+  let locations = [
+      {
+        "code": "TH",
+        "Country": "Thailand",
+        "Region": "Chon Buri",
+        "City": "Ban Talat Bueng"
+      },
+      {
+        "code": "TH",
+        "Country": "Thailand",
+        "Region": "Chiang Mai",
+        "City": "San Pa Tong"
+      },
+      {
+        "code": "JP",
+        "Country": "Japan",
+        "Region": "Miyagi",
+        "City": "Sendai"
+      },
+      {
+        "code": "JP",
+        "Country": "Japan",
+        "Region": "Saga",
+        "City": "Kanzaki"
+      },
+      {
+        "code": "BR",
+        "Country": "Brazil",
+        "Region": "Minas Gerais",
+        "City": "Belo Horizonte"
+      },
+      {
+        "code": "BR",
+        "Country": "Brazil",
+        "Region": "Sao Paulo",
+        "City": "Sao Paulo"
+      },
+      {
+        "code": "BR",
+        "Country": "Brazil",
+        "Region": "Minas Gerais",
+        "City": "Belo Horizonte"
+      },
+    ];
+
+   /*TODO #4
+    * Create select dropdown (10 points) and 
+    * load unique countries from array 'locations' within it (10 points)
+    * when item is clicked table content should be updated - cities for the given country should be displayed (10) and 
+    * country name should be displayed within div with id = selectedCountry (10 points)
+    * -> unique means that one country appears only once
+    * You can use select2 library if you want 
+    * total 40 points
+    */
+
+    /*TODO #5
+     * Within HTML code there is a table with id = locations
+     * This table will list only unique cities from the country selected in select dropdown 
+     * together with total number of occurrences of that city available in the array 
+     * -> unique means that one city appears only once
+     * 10 points
+     */
+
+    /*TODO #6
+      * Table should have solid 2px red borders.
+      * Header columns should be green and centered.
+      * If screen is small, less than 845px button should have red color of letters and 
+      * If it is larger color should be white 
+      * These properties should be defined in style.css file and file should be added within head part of this file
+      * div with id = selectedCountry should use Bootstrap class text-danger
+      * Use Bootstrap to add tooltip to div with id = selectedCountry. You can decide about tooltip content 
+      * total 14 points
+    */
+    
+</script>
+</html>

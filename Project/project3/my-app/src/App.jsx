@@ -23,6 +23,8 @@ function App() {
       <CssBaseline />
       <Router>
         <AppBar position="static">
+
+
           <Toolbar>
             <Typography variant="h6" style={{ flexGrow: 1 }}>
               Bookstore
@@ -38,6 +40,8 @@ function App() {
             </Button>
           </Toolbar>
         </AppBar>
+
+
         <Container style={{ marginTop: '20px' }}>
           <Routes>
             <Route path="/" element={<HomePage />} />
@@ -45,6 +49,8 @@ function App() {
             <Route path="/login" element={<ContactPage />} />
           </Routes>
         </Container>
+
+
       </Router>
     </ThemeProvider>
   );
